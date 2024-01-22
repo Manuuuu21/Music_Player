@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Music Player</title>
+	<link rel="stylesheet" href="lib/index.css" />
+	<link rel="icon" href="lib/music_note.png" type="image/x-icon">
+</head>
+<body>
+
+		<div class="aud_controller_con">
+			<div class="logo">
+				<div>
+					<svg xmlns="http://www.w3.org/2000/svg" height="150" viewBox="0 -960 960 960" width="150"><path d="M400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-422h240v160H560v400q0 66-47 113t-113 47Z"/></svg>
+				</div>
+			</div>
+
+			<div class="seeker_con">
+
+				<div class="music_title">Pick your song in music playlist</div>
+
+				<div style="position:absolute;left: 0;bottom: -78px;width: 100%;">
+					<input value="0" type="range" min="0" max="120" id="myRange"><br/>
+		 			<progress value="0" min="0" max="120" id="myProgress"></progress>
+	 			
+		 			<div style="margin-top: 10px" class="music_controller_con">
+			 			<!-- Previous Music button -->
+			 			<button id="prevMusicButton" onclick="getPreviousMusic()">
+							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M220-240v-480h80v480h-80Zm520 0L380-480l360-240v480Z"/></svg>
+						</button>
+
+						<!-- Play and Pause Music button -->
+			 			<button id="playMusicButton" onclick="playTheCurrentMusic()">
+							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M320-200v-560l440 280-440 280Z"/></svg>
+						</button>
+
+			 			<!-- Next Music button -->
+			 			<button id="nextMusicButton" onclick="getNextMusic()">
+							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M660-240v-480h80v480h-80Zm-440 0v-480l360 240-360 240Z"/></svg>
+						</button>	
+						<div style="margin-top: 9px"><span id="timerMinutes">0</span>:<span id="timerSeconds">00</span> / <span id="timerEnd">0:00</span></div>
+
+
+						<div style="position: absolute; right: 0px">
+							<!-- Mute icon -->
+							<button id="muteButton" onclick="muteMusic()">
+								<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320Z"/></svg>
+							</button>
+
+
+
+							<!-- shuffle icon -->
+							<button id="shuffleButton" onclick="getRandomMusic()">
+								<svg class="disable" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M560-160v-80h104L537-367l57-57 126 126v-102h80v240H560Zm-344 0-56-56 504-504H560v-80h240v240h-80v-104L216-160Zm151-377L160-744l56-56 207 207-56 56Z"/></svg>
+							</button>
+
+							<!-- repeat all song icon -->
+							<button id="loopButton" onclick="getLoopMusic()">
+								<svg class="disable" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"/></svg>
+							</button>
+						</div>
+
+					</div>
+
+				</div>
+
+	 		</div>
+		</div>
+
+		<div class="music_list">
+			<div style="margin-bottom:10px;"><b>My Music Playlist</b></div>
+			<div style="box-sizing: border-box;"><input id="searchInput" onkeyup="searchFilterMusicTitle()" class="search_filter" type="text" placeholder="Search music here" name="filter_music_list" /></div>
+
+			<div class="music_data_con"></div>
+		</div>
+
+		<div class="footer">
+			Created by Manuel G. Sintos <br/>Year 2024
+		</div>
+
+		<div class="myAudio"></div>
+
+
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/music_list.js"></script>
+	<script type="text/javascript" src="lib/global_function.js"></script>
+
+</body>
+</html>
