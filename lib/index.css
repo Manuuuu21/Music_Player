@@ -69,10 +69,50 @@ progress {
   border: none;
 }
 
+#volumeSlider {
+  -webkit-appearance: none;
+  height: 4px;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  width: 20%;
+  position: relative;
+  left: 55px;
+  top: -14.2px;
+  border-radius: 10px;
+  z-index: 2;
+}
+#volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  margin-top: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: black !important;
+}
+#volumeSliderProgress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 19.6%;
+  border-radius: 10px;
+  background: #333;
+  height: 4px;
+  border: none;
+  position: relative;
+  left: -13px;
+  top: -17.1px;
+  border-radius: 10px;
+}
+#volumeSliderProgress::-webkit-progress-value {
+  background: #111;
+  border-radius: 10px;
+}
 
 .aud_controller_con {
   width:650px;
-  height: 500px;
+  height: 485px;
   padding: 20px;
   margin: 20px;
   border: none;
@@ -113,7 +153,7 @@ progress {
 .music_list {
   padding: 20px;
   width: 400px;
-  height: 500px;
+  height: 485px;
   border: none;
   background: #fff;
   /* box-shadow: 0 2px 3px 2px silver; */
@@ -198,12 +238,13 @@ progress {
   border: none;
   border-radius: 50%;
   margin-right: 10px;
+  background: none;
 }
 #shuffleButton:active, #loopButton:active, #prevMusicButton:active, #nextMusicButton:active, #playMusicButton:active, #muteButton:active {
   border: none;
   border-radius: 50%;
   margin-right: 10px;
-  background: gray;
+  background: silver;
 }
 #shuffleButton svg, #loopButton svg, #prevMusicButton svg, #nextMusicButton svg, #playMusicButton svg, #muteButton svg {
   margin-top: 5px;
