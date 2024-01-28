@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Music Player</title>
 	<link rel="stylesheet" href="lib/index.css" />
 	<link rel="icon" href="lib/music_note.png" type="image/x-icon">
@@ -20,8 +21,8 @@
 				<div class="music_title">Pick your song in music playlist</div>
 
 				<div style="position:absolute;left: 0;bottom: -78px;width: 100%;">
-					<input value="0" type="range" min="0" max="120" id="myRange"><br/>
-		 			<progress value="0" min="0" max="120" id="myProgress"></progress>
+					<input step="0.01" onmousedown="mouseDown()" onmouseup="mouseUp()" value="0" type="range" min="0" max="0" id="myRange"><br/>
+		 			<progress step="0.01" value="0" min="0" max="0" id="myProgress"></progress>
 	 			
 		 			<div style="margin-top: 10px" class="music_controller_con">
 			 			<!-- Previous Music button -->
@@ -38,15 +39,16 @@
 			 			<button id="nextMusicButton" onclick="getNextMusic()">
 							<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M660-240v-480h80v480h-80Zm-440 0v-480l360 240-360 240Z"/></svg>
 						</button>	
-						<div style="margin-top: 9px"><span id="timerMinutes">0</span>:<span id="timerSeconds">00</span> / <span id="timerEnd">0:00</span></div>
+						<div style="margin-top: 9px"><span id="timerMinutes">0</span>:<span id="timerSeconds">00</span> / <span id="timerEndMinutes">0</span>:<span id="timerEndSeconds">00</span></div>
 
 
-						<div style="position: absolute; right: 0px">
+						<div style="width: 48%;position: absolute; right: -10px">
 							<!-- Mute icon -->
-							<button id="muteButton" onclick="muteMusic()">
+							<button style="position:relative;right:-64px;" id="muteButton" onclick="muteMusic()">
 								<svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320Z"/></svg>
 							</button>
-
+							<input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+							<progress id="volumeSliderProgress" value="1" step="0.01" min="0" max="1"></progress>
 
 
 							<!-- shuffle icon -->
@@ -59,7 +61,6 @@
 								<svg class="disable" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M280-80 120-240l160-160 56 58-62 62h406v-160h80v240H274l62 62-56 58Zm-80-440v-240h486l-62-62 56-58 160 160-160 160-56-58 62-62H280v160h-80Z"/></svg>
 							</button>
 						</div>
-
 					</div>
 
 				</div>
@@ -83,7 +84,8 @@
 
 	<script type="text/javascript" src="lib/jquery.min.js"></script>
 	<script type="text/javascript" src="lib/music_list.js"></script>
-	<script type="text/javascript" src="lib/global_function.js"></script>
+	<script type="text/javascript" src="lib/global_variables.js"></script>
+	<script type="text/javascript" src="lib/initialize.js"></script>
 
 </body>
 </html>
