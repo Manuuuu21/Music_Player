@@ -2,6 +2,7 @@
 :root {
   --seekBarColor: linear-gradient(to right, red, orange);
   --borderColorForSeekBarCircle: white;
+  --SnackBarTransition: 0.5s;
 }
 @font-face {
   font-family: 'Roboto';
@@ -152,7 +153,7 @@ progress {
 }
 .music_list {
   padding: 20px;
-  width: 400px;
+  width: 450px;
   height: 485px;
   border: none;
   background: #fff;
@@ -163,7 +164,7 @@ progress {
   width: 100%;
   border: 1px solid silver;
   border-radius: 20px;
-  padding: 15px 15px 15px 50px;
+  padding: 15px 55px 15px 50px;
   box-sizing: border-box;
   outline: none;
   background: url("search_img.png") no-repeat left;
@@ -215,8 +216,10 @@ progress {
 .music_data_title {
   background: none;
   width: 87%;
+  align-content: center;
+  margin-top: -4px;
 }
-.music_data_time_con {
+.music_data_time_con, .music_data_numbering_con {
   background: none;
 }
 .music_data_time {
@@ -224,37 +227,45 @@ progress {
   padding: 5px;
   width: 25px;
   background: none;
-  border: 1px solid gray;
+  border: 1px solid black;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
 }
+.music_data_numbering {
+  font-size: 16px;
+  padding: 5px;
+  width: 25px;
+  background: none;
+  position: relative;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
 
 /* Controller Button Design */
-#shuffleButton, #loopButton, #prevMusicButton, #nextMusicButton, #playMusicButton, #muteButton {
+#shuffleButton, #loopButton, #prevMusicButton, #nextMusicButton, #playMusicButton, #muteButton, #resetInputButton {
   cursor: pointer;
   border: none;
   border-radius: 50%;
   margin-right: 10px;
   background: none;
 }
-#shuffleButton:active, #loopButton:active, #prevMusicButton:active, #nextMusicButton:active, #playMusicButton:active, #muteButton:active {
+#shuffleButton:active, #loopButton:active, #prevMusicButton:active, #nextMusicButton:active, #playMusicButton:active, #muteButton:active, #resetInputButton:active {
   border: none;
   border-radius: 50%;
   margin-right: 10px;
   background: silver;
 }
-#shuffleButton svg, #loopButton svg, #prevMusicButton svg, #nextMusicButton svg, #playMusicButton svg, #muteButton svg {
+#shuffleButton svg, #loopButton svg, #prevMusicButton svg, #nextMusicButton svg, #playMusicButton svg, #muteButton svg, #resetInputButton svg {
   margin-top: 5px;
 }
 #shuffleButton svg.disable, #loopButton svg.disable {
   margin-top: 5px;
   fill: gray;
 }
-
-
 .footer {
   position: fixed;
   left: 0px;
@@ -266,3 +277,4 @@ progress {
   box-sizing: border-box;
   width: 100%;
 }
+
